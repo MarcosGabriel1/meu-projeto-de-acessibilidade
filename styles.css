@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 :root {
-    --laranja-claro: #c4121b;
+    --laranja-claro: #5e0e29;
 }
 
 body {
     font-size: 1rem;
     font-family: 'Fadilha';
-    background-color: #1612fdbe;
+    background-color: #141435be;
 }
 
 header {
-    background-color: #1612fdbe;
+    background-color: #361705be;
 }
 
 
@@ -22,7 +22,7 @@ section {
 
 
 .nav-link {
-    color: #1612fdbe;
+    color: #0f0f1abe;
     font-weight: 600;
 }
 
