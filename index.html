@@ -4,26 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>Barcelona</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Botões flutuantes de acessibilidade */
+        #acessibilidade-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        #acessibilidade-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #acessibilidade-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
     <header class="p-5">
         <nav class="container d-flex justify-content-between align-items-center">
-            <img src="img/Barcelona FC unveils new crest as it drops letters FCB.png" alt="Logotipo da Tropicália" class="nav-img " loading="lazy">
+            <img src="img/Barcelona FC unveils new crest as it drops letters FCB.png" alt="Logotipo da Tropicália" class="nav-img" loading="lazy">
             <ul class="nav mt-5">
                 <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
                 <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
             </ul>
-            <div id="acessibilidade" class="menu-acessibilidade">
-                <button id="aumentar-fonte" class="btn btn-primary fw-bold">A +</button>
-                <button id="diminuir-fonte" class="btn btn-primary fw-bold">A -</button>
-            </div>
         </nav>
     </header>
 
@@ -33,22 +52,20 @@
             <div class="inicio-fundo d-flex justify-content-between align-items-center">
                 <div class="esquerda-conteudo">
                     <h1 class="display-4 text-white fst-italic fw-bold">Boas-vindas a</h1>
-                    <a href="#RENNER"
-                        class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero
-                        conhecer!</a>
+                    <a href="#RENNER" class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero conhecer!</a>
                 </div>
                 <img src="img/66c342756a38d.jpg" alt="A imagem apresenta o grupo musical Os mutantes, sao tres pessoas cantando em dois microfones" title="Os mutantes - CC0 Domínio Público / Acervo Arquivo Nacional" class="img-fluid img-inicio">
             </div>
         </section>
 
         <section id="RAPUNZEL" class="my-5 pt-6 secao-tropicalia">
-            <div class="container d-flex align-items-center ">
+            <div class="container d-flex align-items-center">
                 <div class="col-4 d-flex justify-content-center">
                     <img src="img/66c342756a38d.jpg" class="rounded-pill" alt="" width="273" height="331" loading="lazy">
                 </div>
                 <div class="col-5">
                     <h2>Kendrick Lamar tem relação com o barça?</h2>
-                    <p class="p-2">Kendrick Lamar não fez nenhuma declaração específica ou ligação direta com o FC Barcelona. No entanto, ele tem sido associado ao clube através de um desafio de dança viral no TikTok, que usava a música "Not Like Us" no contexto do Barcelona e seus fãs. Além disso, Lamar fez referência a Messi e Neymar em uma música, o que pode ter gerado algum interesse da comunidade do Barcelona, já que ambos são jogadores conhecidos. </p>
+                    <p class="p-2">Kendrick Lamar não fez nenhuma declaração específica ou ligação direta com o FC Barcelona. No entanto, ele tem sido associado ao clube através de um desafio de dança viral no TikTok, que usava a música "Not Like Us" no contexto do Barcelona e seus fãs. Além disso, Lamar fez referência a Messi e Neymar em uma música, o que pode ter gerado algum interesse da comunidade do Barcelona, já que ambos são jogadores conhecidos.</p>
                 </div>
             </div>
         </section>
@@ -110,8 +127,24 @@
         <p class="mt-3">Desenvolvido por Marcos Barbosa. Projeto fictício sem fins comerciais.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Botões flutuantes de acessibilidade -->
+    <div id="acessibilidade-container">
+        <button id="aumentar-fonte" onclick="alterarFonte(1.1)">A +</button>
+        <button id="diminuir-fonte" onclick="alterarFonte(0.9)">A -</button>
+    </div>
+
+    <script>
+        // Função para alterar o tamanho da fonte
+        function alterarFonte(fator) {
+            let body = document.body;
+            let currentSize = window.getComputedStyle(body).fontSize;
+            let newSize = parseFloat(currentSize) * fator;  // Aumenta ou diminui conforme o fator
+            body.style.fontSize = newSize + 'px';
+        }
+    </script>
+
 </body>
 
 </html>
+
 
