@@ -1,20 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Função para aumentar o tamanho da fonte
+function aumentarFonte() {
+    let body = document.body;
+    let currentSize = window.getComputedStyle(body).fontSize;
+    let newSize = parseFloat(currentSize) * 1.1;  // Aumenta a fonte em 10%
+    body.style.fontSize = newSize + 'px';
+}
 
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+// Função para diminuir o tamanho da fonte
+function diminuirFonte() {
+    let body = document.body;
+    let currentSize = window.getComputedStyle(body).fontSize;
+    let newSize = parseFloat(currentSize) * 0.9;  // Diminui a fonte em 10%
+    body.style.fontSize = newSize + 'px';
+}
 
-    let tamanhoAtualFonte = 1;
-
-    aumentaFonteBotao.addEventListener('click', function () {
-        tamanhoAtualFonte += 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
-
-    })
-
-    diminuiFonteBotao.addEventListener('click', function () {
-        tamanhoAtualFonte -= 0.1;
-        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
-
-    })
-
-})
+// Atribuir os eventos aos botões de aumentar e diminuir a fonte
+document.getElementById('aumentar-fonte').addEventListener('click', aumentarFonte);
+document.getElementById('diminuir-fonte').addEventListener('click', diminuirFonte);
